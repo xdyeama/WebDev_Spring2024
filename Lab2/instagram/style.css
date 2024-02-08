@@ -134,6 +134,7 @@ li {
 
 .f-b {
     margin: 0 95px;
+    display: flex;
 }
 
 li{
