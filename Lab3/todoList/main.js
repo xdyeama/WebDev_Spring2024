@@ -6,25 +6,30 @@ window.addEventListener("load", () => {
 
     const createHTML = (task) => {
         let taskItem = document.createElement("div");
-        taskItem.id = task.id;
+        console.log(task.id)
+        taskItem.id = task.id.toString();
         taskItem.className = "task_item";
 
         taskItem.addEventListener("change", (e) => {
             if(e.target.type == "checkbox"){
+                toggleCrossed(e.target.nextSibling);
                 tasks[taskItem.id].checked = !tasks[taskItem.id].checked
                 localStorage.setItem("tasks", JSON.stringify(tasks));
-                toggleCrossed(e.target.nextSibling);
             }
         });
 
         taskItem.addEventListener("delete", (e) => {
-            if(e.target.type == "button"){
-                console.log(taskItem.id)
-                tasks.splice(taskItem.id, 1)
+            if(e.target.className == "delete_task"){
+                let taskID = Number(e.parentNode.id)
+                let taskItem = document.getElementById(e.parentNode.id)
+                console.lge(e.parentNode.id)
+                taskItem.remove()
+                tasks.filter(task => task.id != taskID)
+                loadTasks()
             }
-            localStorage.setItem("tasks", tasks)
-            loadTasks(tasks)
-        })
+        });
+
+
 
         const toggleCrossed = (h) => {
             h.classList.toggle("crossed");
@@ -42,8 +47,25 @@ window.addEventListener("load", () => {
 
         let deleteButton = document.createElement("button");
         deleteButton.className = "delete_task";
-        deleteButton.type = "button"
+        deleteButton.type = "reset"
         
+        taskItem.addEventListener("click", (e) => {
+            if (e.target.className === "delete_task") {
+                let taskID = Number(taskItem.id);
+                let taskIndex = tasks.findIndex(task => task.id === taskID);
+
+                if (taskIndex !== -1) {
+                    tasks.splice(taskIndex, 1);
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
+                    taskItem.remove();
+
+                    // Re-index the tasks after removal
+                    tasks.forEach((task, index) => {
+                        task.id = index;
+                    });
+                }
+            }
+        });
 
         let trashImg = document.createElement("img");
         trashImg.src = "trash.png"
@@ -74,8 +96,9 @@ window.addEventListener("load", () => {
     form.addEventListener("submit", (e) => {
         e.preventDefault()
         let taskText = textField.value;
+        print
         let newTask = {
-            id: tasks.length.toString,
+            id: tasks.length,
             title: taskText,
             checked: false
         }
