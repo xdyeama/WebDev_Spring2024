@@ -12,23 +12,11 @@ window.addEventListener("load", () => {
 
         taskItem.addEventListener("change", (e) => {
             if(e.target.type == "checkbox"){
-                toggleCrossed(e.target.nextSibling);
                 tasks[taskItem.id].checked = !tasks[taskItem.id].checked
+                toggleCrossed(e.target.nextSibling);
                 localStorage.setItem("tasks", JSON.stringify(tasks));
             }
         });
-
-        taskItem.addEventListener("delete", (e) => {
-            if(e.target.className == "delete_task"){
-                let taskID = Number(e.parentNode.id)
-                let taskItem = document.getElementById(e.parentNode.id)
-                console.lge(e.parentNode.id)
-                taskItem.remove()
-                tasks.filter(task => task.id != taskID)
-                loadTasks()
-            }
-        });
-
 
 
         const toggleCrossed = (h) => {
@@ -43,22 +31,24 @@ window.addEventListener("load", () => {
         let heading = document.createElement("h4");
         heading.className = "task_label";
         heading.textContent = task.title;
+        if(task.checked == true){
+            heading.classList.add("crossed")
+        }
         taskItem.appendChild(heading)
 
         let deleteButton = document.createElement("button");
-        deleteButton.className = "delete_task";
+        deleteButton.className = "delete_task"; 
         deleteButton.type = "reset"
         
         taskItem.addEventListener("click", (e) => {
             if (e.target.className === "delete_task") {
-                let taskID = Number(taskItem.id);
+                let taskID = parseInt(task.id); 
                 let taskIndex = tasks.findIndex(task => task.id === taskID);
 
                 if (taskIndex !== -1) {
                     tasks.splice(taskIndex, 1);
-                    localStorage.setItem("tasks", JSON.stringify(tasks));
                     taskItem.remove();
-
+                    localStorage.setItem("tasks", JSON.stringify(tasks));
                     // Re-index the tasks after removal
                     tasks.forEach((task, index) => {
                         task.id = index;
