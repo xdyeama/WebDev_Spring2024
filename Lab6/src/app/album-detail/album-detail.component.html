@@ -1,0 +1,36 @@
+<header>
+    <a routerLink="/albums"> Go back</a>
+
+    <!-- <h1> Album {{ album.id }} </h1> -->
+    <h2> Album info </h2>   
+</header>
+  
+<body>
+
+    <div *ngIf="loaded"> 
+
+        <div class="album-info">
+            <h1> Album {{ album.id }} </h1>
+            <div class="title">
+                <div class="edit-false" *ngIf="!onEdit">
+                    <h2 > {{ album.title }} </h2>
+                    <button (click)="startEditing()">Edit title</button>
+                </div>
+                <div class="edit-true" *ngIf="onEdit">
+                    <input [(ngModel)]="newTitle" type="text" placeholder="Set new album name"/>
+                    <button type="button" (click) = "setNewTitle()"> Save </button>
+                </div>
+                
+
+            </div>
+
+            <a routerLink="photos">see photos</a>
+        </div>
+
+
+
+    </div>
+
+    <p *ngIf="!loaded"> Album is loading</p>
+
+</body>

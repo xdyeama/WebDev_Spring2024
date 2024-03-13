@@ -1,0 +1,24 @@
+<body>
+    <div class="top-bar">
+        <a routerLink="/home" (click)="resetAlbumIndex()" class="home">
+            <img class="back_arrow" src="https://cdn.iconscout.com/icon/free/png-256/free-back-arrow-1780574-1514450.png">
+        </a>
+
+        <h2>Album list</h2>
+
+        <input type="text" placeholder="New Album" [(ngModel)]="newTitle"/>
+
+        <button type="button" (click)="addNewAlbum()">Create</button>
+
+    </div>
+
+    <div class="album-list">
+        <div class="album-item" *ngFor="let album of albums">
+            <a routerLink='/albums/{{album.id}}'> {{album.id}} {{album.title}}</a>
+            <button type="button" (click)="deleteAlbum(album)">Delete</button>
+        </div>
+    </div>
+    <button class="show-more-button" (click)="showMoreAlbums()">
+        Show more
+    </button>
+</body>
