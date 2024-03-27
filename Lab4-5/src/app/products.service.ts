@@ -243,8 +243,8 @@ export class ProductsService {
       localStorage.setItem(this.localStorageKey, JSON.stringify(this.categories));
     }
     storedCategories = localStorage.getItem(this.localStorageKey);
-    let category: Category | undefined = storedCategories ? JSON.parse(storedCategories).find((category: Category) => category.category === categoryName) : null;
-    return category ? category.products : null
+    let category: Category | null = storedCategories ? JSON.parse(storedCategories).find((category: Category) => category.category === categoryName) : null;
+    return category ? category?.products : null
   }
 
   removeProduct(productName: string, categoryName: String){

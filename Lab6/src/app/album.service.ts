@@ -48,15 +48,4 @@ export class AlbumService {
     this.currentAlbumIndex = 10;
   }
 
-  getPhotosIndex(): number{
-    return this.currentPhotosIndex;
-  }
-  
-  increasePhotosIndex(): void{
-    this.currentPhotosIndex += 5;
-  }
-
-  resetPhotosIndex(): void{
-    this.currentPhotosIndex = 5;
-  }
 }

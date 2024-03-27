@@ -17,9 +17,9 @@ export class AlbumsComponent {
   }
 
   onRefresh(): void{
-    this.albumService.getAlbums().subscribe((albums) => {
-      this.albums = albums.filter(album => album.id <= this.albumService.getAlbumIndex());
-    })
+      this.albumService.getAlbums().subscribe((albums) => {
+        this.albums = albums.filter(album => album.id <= this.albumService.getAlbumIndex());
+      })
   }
 
   ngOnInit(): void {
