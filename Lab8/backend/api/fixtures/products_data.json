@@ -1,0 +1,50 @@
+[
+  {
+    "model": "api.Product",
+    "pk": 1,
+    "fields": {
+      "name": "Smartphone",
+      "price": 699.99,
+      "category": 1,
+      "description": "A powerful smartphone with the latest features.",
+      "count": 50,
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.Product",
+    "pk": 2,
+    "fields": {
+      "name": "Laptop",
+      "price": 1299.99,
+      "category": 2,
+      "description": "A high-performance laptop for work and entertainment.",
+      "count": 20,
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.Product",
+    "pk": 3,
+    "fields": {
+      "name": "Headphones",
+      "price": 99.99,
+      "category": 1,
+      "description": "Wireless headphones with noise cancellation.",
+      "count": 30,
+      "is_active": true
+    }
+  },
+  {
+    "model": "api.Product",
+    "pk": 4,
+    "fields": {
+      "name": "Tablet",
+      "price": 399.99,
+      "category": 1,
+      "description": "A versatile tablet for work and entertainment.",
+      "count": 15,
+      "is_active": true
+    }
+  }
+]
