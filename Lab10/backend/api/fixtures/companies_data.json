@@ -1,0 +1,102 @@
+[
+  {
+    "model": "api.company",
+    "pk": 1,
+    "fields": {
+      "name": "Company A",
+      "description": "Description of Company A",
+      "city": "City X",
+      "address": "Address of Company A"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 2,
+    "fields": {
+      "name": "Company B",
+      "description": "Description of Company B",
+      "city": "City Y",
+      "address": "Address of Company B"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 3,
+    "fields": {
+      "name": "Company C",
+      "description": "Description of Company C",
+      "city": "City Z",
+      "address": "Address of Company C"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 4,
+    "fields": {
+      "name": "Company D",
+      "description": "Description of Company D",
+      "city": "City T",
+      "address": "Address of Company D"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 5,
+    "fields": {
+      "name": "Company E",
+      "description": "Description of Company E",
+      "city": "City E",
+      "address": "Address of Company E"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 6,
+    "fields": {
+      "name": "Company F",
+      "description": "Description of Company F",
+      "city": "City F",
+      "address": "Address of Company F"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 7,
+    "fields": {
+      "name": "Company G",
+      "description": "Description of Company G",
+      "city": "City G",
+      "address": "Address of Company G"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 8,
+    "fields": {
+      "name": "Company H",
+      "description": "Description of Company H",
+      "city": "City H",
+      "address": "Address of Company H"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 9,
+    "fields": {
+      "name": "Company I",
+      "description": "Description of Company I",
+      "city": "City I",
+      "address": "Address of Company I"
+    }
+  },
+  {
+    "model": "api.company",
+    "pk": 10,
+    "fields": {
+      "name": "Company J",
+      "description": "Description of Company J",
+      "city": "City J",
+      "address": "Address of Company J"
+    }
+  }
+]
